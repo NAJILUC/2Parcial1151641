@@ -25,48 +25,48 @@
           <div class="row">
             <div class="col-md-9 col-lg-8 mx-auto">
               <h3 class="login-heading mb-4">Registro de Tienda</h3>
-              <form>
+              <form action="Controlador">
                 <div class="form-label-group">
-                  <input type="text" id="inputNombre" class="form-control" placeholder="Nombre" required autofocus>
+                  <input type="text" id="inputNombre" class="form-control" placeholder="Nombre" name="txtNombre" required autofocus>
                   <label for="inputNombre">Nombre</label>
                 </div>
                 <div class="form-label-group">
-                  <input type="text" id="inputLema" class="form-control" placeholder="Lema" required autofocus>
+                  <input type="text" id="inputLema" class="form-control" placeholder="Lema" name="txtLema" required autofocus>
                   <label for="inputLema">Lema</label>
                 </div>
                 <div class="form-label-group">
-                  <textarea id="inputDescripcion" class="form-control" placeholder="Descripcion" required autofocus></textarea>
+                  <textarea id="inputDescripcion" class="form-control" placeholder="Descripcion" name="txtDescripcion" required autofocus></textarea>
                   <label for="inputDescripcion">Descripción</label>
                 </div>
                 <div class="form-label-group">
-                  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="txtEmail" required autofocus>
                   <label for="inputEmail">Email</label>
                 </div>
 
                 <div class="form-label-group">
-                  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                  <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="txtPassword" required>
                   <label for="inputPassword">Password</label>
                 </div>
 
                 <div class="form-label-group">
-                  <input type="input" id="inputPropietario" class="form-control" placeholder="Propietario" required>
+                  <input type="input" id="inputPropietario" class="form-control" placeholder="Propietario" name="txtPropietario" required>
                   <label for="inputPropietario">Propietario</label>
                 </div>
                 <div class="form-label-group">
-                  <input type="input" id="inputFacebook" class="form-control" placeholder="Facebook" required>
+                  <input type="input" id="inputFacebook" class="form-control" placeholder="Facebook" name="txtFacebook" required>
                   <label for="inputFacebook">Facebook</label>
                 </div>
                 <div class="form-label-group">
-                  <input type="input" id="inputWeb" class="form-control" placeholder="Web" required>
+                  <input type="input" id="inputWeb" class="form-control" placeholder="Web" name="txtWeb" required>
                   <label for="inputWeb">Web</label>
                 </div>
                 <div class="form-label-group">
-                  <input type="input" id="inputImagen" class="form-control" placeholder="Imagen" required>
+                  <input type="input" id="inputImagen" class="form-control" placeholder="Imagen" name="txtImagen" required>
                   <label for="inputImagen">Imagen</label>
                 </div>
 
 
-                <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Registrar</button>
+                <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit" name="accion" value="registrar">Registrar</button>
 
               </form>
             </div>

@@ -62,7 +62,17 @@ public class TiendaDAO implements tiendaCRUD{
 
     @Override
     public boolean add(Tienda cl) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        String sql="insert into tienda (nombre, lema, descripcion, email, clave, propietario, facebook, web, imagen) values ('"+cl.getNombre()+"','"+cl.getLema()+"','"+cl.getDescripcion()+"','"+cl.getEmail()+"','"+cl.getClave()+"','"+cl.getPropietario()+"','"+cl.getFacebook()+"','"+cl.getWeb()+"','"+cl.getImagen()+"') ";
+        
+        try{
+        
+            con=cn.getConnection();
+            ps=con.prepareStatement(sql);
+            ps.executeUpdate();
+            
+        }catch(Exception e){}
+        return false;
     }
 
     @Override
@@ -74,6 +84,8 @@ public class TiendaDAO implements tiendaCRUD{
     public boolean eliminar(int id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
+    
     
    
     
