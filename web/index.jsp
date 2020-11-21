@@ -17,7 +17,7 @@
 	<link rel="stylesheet" type="text/css" href="css/card.css">
         
         <%
-        
+        if(request.getParameter("mensaje")==null){}else
         if(request.getParameter("mensaje").equalsIgnoreCase("registro")){
         %>
  

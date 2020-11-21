@@ -114,7 +114,7 @@ public class TiendaDAO implements tiendaCRUD{
             
             if(r==1){
             
-                return 1;
+                return t.getId();
             }else{
             
                 return 0;

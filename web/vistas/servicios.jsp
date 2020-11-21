@@ -4,6 +4,13 @@
     Author     : HP
 --%>
 
+
+<%@page import="Modelo.Servicio"%>
+<%@page import="ModeloDAO.ServicioDAO"%>
+<%@page import="java.util.Iterator"%>
+<%@page import="Modelo.Tienda"%>
+<%@page import="java.util.List"%>
+<%@page import="ModeloDAO.TiendaDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -23,94 +30,41 @@
 
 
   <div class="row">
+      
+      
+      <%
+      
+        
+        int id=Integer.parseInt(request.getParameter("id"));
+        
+        ServicioDAO dao=new ServicioDAO();
+                        List<Servicio> list=dao.listarTiendas(id);
+                        Iterator<Servicio>iter=list.iterator();
+                        Servicio t=null;
+                      
+                        
+                        while(iter.hasNext()){
+                            
+                        }
+                            t=iter.next();
+      %>
     <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
       <div class="card h-100">
         <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
         <div class="card-body">
           <h4 class="card-title">
-            <a href="#">Servicio Uno</a>
+            <a href="#"><%=t.getNombre()%></a>
           </h4>
-          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
+          <p class="card-text"><%=t.getDescripcion()%></p>
         </div>
       </div>
     </div>
-    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-      <div class="card h-100">
-        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-        <div class="card-body">
-          <h4 class="card-title">
-            <a href="#">Servicio Dos</a>
-          </h4>
-          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-      <div class="card h-100">
-        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-        <div class="card-body">
-          <h4 class="card-title">
-            <a href="#">Servicio Tres</a>
-          </h4>
-          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos quisquam, error quod sed cumque, odio distinctio velit nostrum temporibus necessitatibus et facere atque iure perspiciatis mollitia recusandae vero vel quam!</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-      <div class="card h-100">
-        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-        <div class="card-body">
-          <h4 class="card-title">
-            <a href="#">Servicio Cuatro</a>
-          </h4>
-          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-      <div class="card h-100">
-        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-        <div class="card-body">
-          <h4 class="card-title">
-            <a href="#">Servicio Cinco</a>
-          </h4>
-          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-      <div class="card h-100">
-        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-        <div class="card-body">
-          <h4 class="card-title">
-            <a href="#">Servicio Seis</a>
-          </h4>
-          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-      <div class="card h-100">
-        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-        <div class="card-body">
-          <h4 class="card-title">
-            <a href="#">Servicio Siete</a>
-          </h4>
-          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-      <div class="card h-100">
-        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-        <div class="card-body">
-          <h4 class="card-title">
-            <a href="#">Servicio Ocho</a>
-          </h4>
-          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius adipisci dicta dignissimos neque animi ea, veritatis, provident hic consequatur ut esse! Commodi ea consequatur accusantium, beatae qui deserunt tenetur ipsa.</p>
-        </div>
-      </div>
-    </div>
+    
+      <%}%>
+      
+      
+      
+    
   </div>
   <!-- /.row -->
 

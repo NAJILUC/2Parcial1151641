@@ -46,13 +46,29 @@ public class Controlador extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-       
+       String acceso="";
         String accion=request.getParameter("accion");
         if(accion.equalsIgnoreCase("ingresar")){
-        
+            System.out.println("CONTROLADOR LOGIN");
+            int r;
              String correo=request.getParameter("txtEmail");
              String clave=request.getParameter("txtClave");
+             
+             tienda.setEmail(correo);
+             tienda.setClave(clave);
+             
+             r=tdao.validar(tienda);
+             
+             if(r!=0){
+             
+                 acceso=servicios+"/?id="+r;
+             }else{
+                acceso=index;
+             }
         }
+        acceso=index;
+         RequestDispatcher vista=request.getRequestDispatcher(acceso);
+       vista.forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

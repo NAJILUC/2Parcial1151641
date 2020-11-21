@@ -30,7 +30,30 @@ public class ServicioDAO implements servicioCRUD{
     @Override
     public List listar() {
         ArrayList<Servicio>list=new ArrayList<>();
-        String sql="select * from tienda";
+        String sql="select * from servicio";
+        try{
+            con=cn.getConnection();
+            ps=con.prepareStatement(sql);
+            rs=ps.executeQuery();
+            while(rs.next()){
+                Servicio s=new Servicio();
+                s.setId(rs.getInt("id"));
+                s.setNombre(rs.getString("nombre"));
+                s.setDescripcion(rs.getString("descripcion"));
+                s.setTienda(rs.getInt("tienda"));
+                
+                list.add(s);
+            }
+            
+        }
+        catch(Exception e){}
+        
+        return list;
+    }
+    
+     public List listarTiendas(int tienda) {
+        ArrayList<Servicio>list=new ArrayList<>();
+        String sql="select * from servicio where tienda="+tienda;
         try{
             con=cn.getConnection();
             ps=con.prepareStatement(sql);
