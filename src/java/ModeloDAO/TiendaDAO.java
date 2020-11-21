@@ -86,6 +86,45 @@ public class TiendaDAO implements tiendaCRUD{
     }
     
     
+    int r=0;
+    public int validar(Tienda t){
+    
+        String sql="select * from tienda where email=? and clave=?";
+        try{
+        
+            con=cn.getConnection();
+            ps=con.prepareStatement(sql);
+            ps.setString(1, t.getEmail());
+            ps.setString(1, t.getClave());
+            rs=ps.executeQuery();
+            
+            while(rs.next()){
+            
+                r=r+1;
+                t.setId(rs.getInt("id"));
+                t.setDescripcion(rs.getString("descripcion"));
+                t.setNombre(rs.getString("nombre"));
+                t.setLema(rs.getString("lema"));
+                t.setEmail(rs.getString("email"));
+                t.setPropietario(rs.getString("propitario"));
+                t.setFacebook(rs.getString("facebook"));
+                t.setWeb(rs.getString("web"));
+                t.setImagen(rs.getString("imagen"));
+            }
+            
+            if(r==1){
+            
+                return 1;
+            }else{
+            
+                return 0;
+            }
+        }catch(Exception e){
+        
+             return 0;
+        }
+       
+    }
     
    
     

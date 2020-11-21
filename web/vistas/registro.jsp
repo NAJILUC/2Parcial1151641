@@ -14,6 +14,20 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
 	<link rel="stylesheet" type="text/css" href="css/registro.css">
+        <%
+        
+        if(request.getParameter("mensaje").equalsIgnoreCase("error")){
+        %>
+ 
+        <script>
+        alert("El email ya se encuentra registrado");  
+        </script>
+        
+            <%
+            
+        }
+        
+        %>
 </head>
 <body>
 <div class="container-fluid">
