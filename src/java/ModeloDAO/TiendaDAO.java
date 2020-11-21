@@ -57,7 +57,32 @@ public class TiendaDAO implements tiendaCRUD{
 
     @Override
     public Tienda list(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      
+        Tienda t=new Tienda();
+        String sql="select * from tienda where id="+id;
+        try{
+            con=cn.getConnection();
+            ps=con.prepareStatement(sql);
+            rs=ps.executeQuery();
+            while(rs.next()){
+                
+                t.setId(rs.getInt("id"));
+                t.setNombre(rs.getString("nombre"));
+                t.setLema(rs.getString("lema"));
+                t.setDescripcion(rs.getString("descripcion"));
+                t.setEmail(rs.getString("email"));
+                t.setClave(rs.getString("clave"));
+                t.setPropietario(rs.getString("propietario"));
+                t.setFacebook(rs.getString("facebook"));
+                t.setWeb(rs.getString("web"));
+                t.setImagen(rs.getString("imagen"));
+                
+            }
+            
+        }
+        catch(Exception e){}
+        return t;
+        
     }
 
     @Override

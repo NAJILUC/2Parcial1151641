@@ -23,12 +23,19 @@
 	<link rel="stylesheet" type="text/css" href="css/card.css">
 </head>
 <body>
-
+<%
+     int ide=Integer.parseInt(request.getParameter("id"));
+     TiendaDAO tdao=new TiendaDAO();
+     Tienda o=new Tienda();
+     o=tdao.list(ide);
+     String nombre=o.getNombre();
+     System.out.println(o.getNombre());
+     %> 
 <section id="team" class="pb-5">
   <div class="container">
       
-      
-  <h5 class="section-title h1">SERVICIOS</h5>
+  
+  <h5 class="section-title h1">SERVICIOS DE <%=nombre%></h5>
 
 
   <div class="row">
