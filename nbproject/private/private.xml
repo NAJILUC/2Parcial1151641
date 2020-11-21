@@ -3,7 +3,25 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Documents/Web%202/2Previ/2Parcial1151641/web/index.jsp</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Parcial/web/css/login.css</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Parcial/src/java/ModeloDAO/TiendaDAO.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Parcial/src/java/ModeloDAO/SeguirDAO.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Parcial/web/vistas/registro.jsp</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Parcial/web/vistas/servicios.jsp</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Parcial/src/java/Modelo/Cliente.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Parcial/web/vistas/login.jsp</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Parcial/src/java/Interfaces/clienteCRUD.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Parcial/src/java/Controlador/Controlador.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Parcial/src/java/ModeloDAO/ServicioDAO.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Parcial/web/css/registro.css</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Parcial/src/java/Config/Conexion.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Parcial/src/java/Modelo/Servicio.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Parcial/src/java/Modelo/Seguir.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Parcial/web/index.jsp</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Parcial/src/java/Interfaces/tiendaCRUD.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Parcial/src/java/Modelo/Tienda.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Parcial/src/java/Interfaces/servicioCRUD.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Parcial/src/java/ModeloDAO/ClienteDAO.java</file>
         </group>
     </open-files>
 </project-private>

@@ -46,29 +46,18 @@ public class Controlador extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-       String acceso="";
-        String accion=request.getParameter("accion");
-        if(accion.equalsIgnoreCase("ingresar")){
-            System.out.println("CONTROLADOR LOGIN");
-            int r;
-             String correo=request.getParameter("txtEmail");
-             String clave=request.getParameter("txtClave");
-             
-             tienda.setEmail(correo);
-             tienda.setClave(clave);
-             
-             r=tdao.validar(tienda);
-             
-             if(r!=0){
-             
-                 acceso=servicios+"/?id="+r;
-             }else{
-                acceso=index;
-             }
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet Controlador</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet Controlador at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
         }
-        acceso=index;
-         RequestDispatcher vista=request.getRequestDispatcher(acceso);
-       vista.forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -91,7 +80,7 @@ public class Controlador extends HttpServlet {
            String nombre=request.getParameter("txtNombre");
            String lema=request.getParameter("txtLema");
            String descripcion=request.getParameter("txtDescripcion");
-           String email=request.getParameter("email");
+           String email=request.getParameter("txtEmail");
            String clave=request.getParameter("txtPassword");
            String propietario=request.getParameter("txtPropietario");
            String facebook=request.getParameter("txtFacebook");
@@ -128,9 +117,14 @@ public class Controlador extends HttpServlet {
            tienda.setImagen(imagen);
            
            tdao.add(tienda);
-           acceso=index+"mensaje=registro";
+           acceso=index+"?mensaje=registro";
            }
            
+       }else if(action.equalsIgnoreCase("e-login")){
+           acceso=login;
+       
+       }else if(action.equalsIgnoreCase("e-registro")){
+           acceso=registro;
        }
        
        
@@ -151,7 +145,32 @@ public class Controlador extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        response.setContentType("text/html;charset=UTF-8");
+       String acceso="";
+        System.out.println("CONTROLADOR LGIN");
+        String accion=request.getParameter("accion");
+        if(accion.equalsIgnoreCase("ingresar")){
+            System.out.println("CONTROLADOR LOGIN");
+            int r;
+             String correo=request.getParameter("txtEmail");
+             String clave=request.getParameter("txtClave");
+             
+             tienda.setEmail(correo);
+             tienda.setClave(clave);
+             
+             r=tdao.validar(tienda);
+             
+             if(r!=0){
+                 System.out.println("ENTROO EN TIENDA");
+                 acceso=servicios+"?id="+r+"";
+             }else{
+                 System.out.println("ENTROO EN USUARIO");
+                acceso=index;
+             }
+        }
+        
+         RequestDispatcher vista=request.getRequestDispatcher(acceso);
+          vista.forward(request, response);
     }
 
     /**

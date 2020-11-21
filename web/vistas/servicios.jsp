@@ -26,7 +26,8 @@
 
 <section id="team" class="pb-5">
   <div class="container">
-  <h5 class="section-title h1">SERVICIOS DE ${nombredetienda}</h5>
+      
+  <h5 class="section-title h1">SERVICIOS DE <%%></h5>
 
 
   <div class="row">
