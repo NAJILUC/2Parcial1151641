@@ -27,7 +27,8 @@
 <section id="team" class="pb-5">
   <div class="container">
       
-  <h5 class="section-title h1">SERVICIOS DE <%%></h5>
+      
+  <h5 class="section-title h1">SERVICIOS</h5>
 
 
   <div class="row">
@@ -46,7 +47,7 @@
                         
                         while(iter.hasNext()){
                             
-                        }
+                        
                             t=iter.next();
       %>
     <div class="col-lg-3 col-md-4 col-sm-6 mb-4">

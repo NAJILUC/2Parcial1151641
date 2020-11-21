@@ -145,7 +145,7 @@ public class Controlador extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+       
        String acceso="";
         System.out.println("CONTROLADOR LGIN");
         String accion=request.getParameter("accion");
